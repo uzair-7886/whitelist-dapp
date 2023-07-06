@@ -5,7 +5,7 @@ contract Whitelist{
     uint8 public maxAddressesToWhitelist;
     uint8 public numberOfAddressesWhitelisted;
 
-    mapping(address=>bool) whitelistAddress;
+    mapping(address=>bool) public whitelistAddress;
 
     constructor(uint8 _maxAddressesToWhitelist){
         maxAddressesToWhitelist = _maxAddressesToWhitelist;
@@ -17,5 +17,7 @@ contract Whitelist{
         whitelistAddress[msg.sender] = true;
         numberOfAddressesWhitelisted++;
     }
+
+    
 }
 
